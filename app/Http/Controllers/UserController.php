@@ -12,7 +12,7 @@ class UserController extends Controller
         $users = User::with('orders')->get();
 
         foreach ($users as $user) {
-    		echo "User: {$user->name}<br>";
+    		echo "User: {$user->name} __ Email: {$user->email}<br>";
 
 		    foreach ($user->orders as $order) {
 		        echo "Invoice: {$order->invoice_number}, Amount: {$order->total_amount}<br>";
